@@ -28,11 +28,12 @@ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-//#include "stm32l4xx_hal.h"
+#include "stm32wbxx_hal.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "LED.h"
+#include "demo.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -58,30 +59,14 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define B1_Pin GPIO_PIN_4
-#define B1_GPIO_Port GPIOC
-#define LD2_Pin GPIO_PIN_0
-#define LD2_GPIO_Port GPIOB
-#define LD3_Pin GPIO_PIN_1
-#define LD3_GPIO_Port GPIOB
-#define JTMS_Pin GPIO_PIN_13
-#define JTMS_GPIO_Port GPIOA
-#define JTCK_Pin GPIO_PIN_14
-#define JTCK_GPIO_Port GPIOA
-#define B2_Pin GPIO_PIN_0
-#define B2_GPIO_Port GPIOD
-#define B3_Pin GPIO_PIN_1
-#define B3_GPIO_Port GPIOD
-#define JTDO_Pin GPIO_PIN_3
-#define JTDO_GPIO_Port GPIOB
-#define LD1_Pin GPIO_PIN_5
-#define LD1_GPIO_Port GPIOB
-#define STLINK_RX_Pin GPIO_PIN_6
-#define STLINK_RX_GPIO_Port GPIOB
-#define STLINK_TX_Pin GPIO_PIN_7
-#define STLINK_TX_GPIO_Port GPIOB
+#define Switch_1_Pin GPIO_PIN_4
+#define Switch_1_GPIO_Port GPIOC
+#define Green_LED_Pin GPIO_PIN_0
+#define Green_LED_GPIO_Port GPIOB
+#define Switch_2_Pin GPIO_PIN_0
+#define Switch_2_GPIO_Port GPIOD
 /* USER CODE BEGIN Private defines */
-
+static uint32_t cycle_time = 2000000;
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
@@ -89,5 +74,3 @@ void Error_Handler(void);
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
